@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EchoMeet - Video Meetings</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>EchoMeet</h1>
+      <p>Join or Create High-Quality Video Meetings</p>
+      <button onclick="createMeeting()">Create Meeting</button>
+      <p>Welcome, <span id="username-display"></span></p>
+      <h3>Recent Meetings</h3>
+      <ul id="meeting-list"></ul>
+      <button id="logout-btn">Logout</button>
+    </div>
+
+      <div id="meeting-link" class="hidden">
+        <input type="text" id="link-box" readonly />
+        <button onclick="copyLink()">Copy</button>
+      </div>
+      <hr />
+
+      <div class="section-card">
+        <h2>Friends</h2>
+        <input type="text" id="friend-username" placeholder="Add friend by username" />
+        <button onclick="addFriend()">Add Friend</button>
+        <ul id="friend-list"></ul>
+      </div>      
+
+      <input type="text" id="join-code" placeholder="Enter Join Code" />
+      <button onclick="joinMeeting()">Join Meeting</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

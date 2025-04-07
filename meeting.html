@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EchoMeet Room</title>
+  <link rel="stylesheet" href="room-style.css" />
+</head>
+<body>
+  <div class="room-container">
+    <h2>EchoMeet - Live Video Meeting</h2>
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+
+
+
+    <div class="controls">
+      <button onclick="toggleMic()" id="micBtn">Mute Mic</button>
+      <button onclick="toggleCamera()">Camera</button>
+      <button onclick="shareScreen()">Share Screen</button>
+      <button onclick="endCall()">End Call</button>
+    </div>
+
+    <p>Meeting ID: <span id="meetingIdDisplay">Loading...</span></p>
+
+    <input type="text" id="peer-id" placeholder="Enter Peer ID to Call" />
+    <button onclick="callPeer()">Call</button>
+  </div>
+  <div class="chat-box">
+    <div id="chat-messages"></div>
+    <input type="text" id="chat-input" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>  
+
+  <div id="remoteVideoWrapper" style="position:relative;">
+    <video id="remoteVideo" autoplay playsinline></video>
+    <div id="remoteMicStatus" style="position:absolute; bottom:10px; right:10px; background:#000; color:#fff; padding:2px 6px; border-radius:4px; font-size:12px;">Mic: On</div>
+  </div>
+  
+  <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+  <script src="room-script.js"></script>
+</body>
+</html>
